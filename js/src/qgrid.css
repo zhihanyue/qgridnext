@@ -92,17 +92,6 @@
   margin: 0px;
 }
 
-.qgrid-modal .modal-dialog {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  bottom: 20px;
-  right: 20px;
-  margin: 0px;
-  width: auto;
-  height: auto;
-}
-
 .qgrid-modal .modal-content {
   position: absolute;
   left: 0px;
