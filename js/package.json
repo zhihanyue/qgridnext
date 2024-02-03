@@ -1,0 +1,52 @@
+{
+  "name": "qgrid2",
+  "version": "1.1.3",
+  "description": "An Interactive Grid for Sorting and Filtering DataFrames in Jupyter Notebook",
+  "author": "Quantopian Inc.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Quantopian/qgrid.git"
+  },
+  "keywords": [
+    "jupyter",
+    "widgets",
+    "ipython",
+    "ipywidgets"
+  ],
+  "scripts": {
+    "clean": "rimraf dist/",
+    "prepare": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "expose-loader": "^0.7.5",
+    "file-loader": "^6.0.0",
+    "jshint": "^2.11.0",
+    "json-loader": "^0.5.7",
+    "rimraf": "^3.0.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@jupyter-widgets/base": "^1.1 || ^2 || ^3",
+    "@jupyter-widgets/controls": "^1 || ^2",
+    "jquery": "^3.2.1",
+    "jquery-ui-dist": "^1.12.1",
+    "moment": "^2.24.0",
+    "slickgrid-qgrid": "0.0.5",
+    "underscore": "^1.9.2"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "jupyterlab": {
+    "extension": "src/jupyterlab-plugin"
+  }
+}
