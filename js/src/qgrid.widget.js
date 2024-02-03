@@ -130,15 +130,11 @@ class QgridView extends widgets.DOMWidgetView {
         `).appendTo($('body'));
       }
       this.full_screen_btn = $(`
-        <button
-          class='btn btn-default fa fa-arrows-alt full-screen-btn'/>
+        <button class='btn btn-default fa fa-arrows-alt full-screen-btn'></button>
       `).appendTo(this.toolbar);
       this.close_modal_btn = $(`
-        <button
-          class='btn btn-default fa fa-times close-modal-btn'
-          data-dismiss="modal"/>
+        <button class='btn btn-default fa fa-times close-modal-btn' data-dismiss="modal"></button>
       `).appendTo(this.toolbar);
-
     }
     this.bind_toolbar_events();
   }
@@ -305,7 +301,7 @@ class QgridView extends widgets.DOMWidgetView {
         filter: boolean_filter.BooleanFilter,
         editor: Slick.Editors.Checkbox,
         formatter: (row, cell, value, columngDef, dataContext) => {
-          return value ? `<span class="fa fa-check"/>` : "";
+          return value ? `<span class="fa fa-check"></span>` : "";
         }
       }
     };
@@ -484,7 +480,7 @@ class QgridView extends widgets.DOMWidgetView {
       var clicked_column_sort_indicator = col_header.find('.slick-sort-indicator');
       if (clicked_column_sort_indicator.length == 0){
         clicked_column_sort_indicator =
-            $("<span class='slick-sort-indicator'/>").appendTo(col_header);
+            $("<span class='slick-sort-indicator'></span>").appendTo(col_header);
       }
 
       this.sort_indicator = clicked_column_sort_indicator;
