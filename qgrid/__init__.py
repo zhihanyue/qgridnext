@@ -1,4 +1,4 @@
-from ._version import version_info, __version__  # noqa F401
+from ._version import __version__  # noqa F401
 
 from .grid import (
     enable,
