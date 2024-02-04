@@ -9,15 +9,15 @@ var boolean_filter = require('./qgrid.booleanfilter.js');
 var editors = require('./qgrid.editors.js');
 var jquery_ui = require('jquery-ui-dist/jquery-ui.min.js');
 
-require('slickgrid-qgrid/slick.core.js');
-require('slickgrid-qgrid/lib/jquery.event.drag-2.3.0.js');
-require('slickgrid-qgrid/plugins/slick.rowselectionmodel.js');
-require('slickgrid-qgrid/plugins/slick.checkboxselectcolumn.js');
-require('slickgrid-qgrid/slick.dataview.js');
-require('slickgrid-qgrid/slick.grid.js');
-require('slickgrid-qgrid/slick.editors.js');
-require('style-loader!slickgrid-qgrid/slick.grid.css');
-require('style-loader!slickgrid-qgrid/slick-default-theme.css');
+require('slickgrid-qgridnext/slick.core.js');
+require('slickgrid-qgridnext/lib/jquery.event.drag-2.3.0.js');
+require('slickgrid-qgridnext/plugins/slick.rowselectionmodel.js');
+require('slickgrid-qgridnext/plugins/slick.checkboxselectcolumn.js');
+require('slickgrid-qgridnext/slick.dataview.js');
+require('slickgrid-qgridnext/slick.grid.js');
+require('slickgrid-qgridnext/slick.editors.js');
+require('style-loader!slickgrid-qgridnext/slick.grid.css');
+require('style-loader!slickgrid-qgridnext/slick-default-theme.css');
 require('style-loader!jquery-ui-dist/jquery-ui.min.css');
 require('style-loader!./qgrid.css');
 

@@ -5,7 +5,7 @@
  * MIT License, Copyright (c) 2010 Michael Leibman
  */
 var $ = require('jquery');
-require('slickgrid-qgrid/slick.editors.js');
+require('slickgrid-qgridnext/slick.editors.js');
 
 class IndexEditor {
   constructor(args){
