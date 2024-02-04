@@ -86,7 +86,7 @@ If you haven't already install jupyterlab and enabled ipywidgets, do that first 
 
 Install the qgrid-jupyterlab extension and enable::
 
-  jupyter labextension install qgrid2
+  jupyter labextension install qgridjs
 
 At this point if you run jupyter lab normally with the 'jupyter lab' command, you should be
 able to use qgrid in notebooks as you normally would.

@@ -1,5 +1,5 @@
 var path = require('path');
-var version = require('./package.json').version;
+var pkg_info = require('./package.json');
 var webpack = require('webpack');
 
 // Custom webpack loaders are generally the same for all webpack bundles, hence
@@ -84,7 +84,7 @@ module.exports = [
             filename: 'index.js',
             path: path.resolve(__dirname, './dist/'),
             libraryTarget: 'amd',
-            publicPath: 'https://unpkg.com/qgrid@' + version + '/dist/'
+            publicPath: 'https://unpkg.com/' + pkg_info.name + '@' + pkg_info.version + '/dist/'
         },
         devtool: 'source-map',
         module: {

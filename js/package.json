@@ -1,5 +1,5 @@
 {
-  "name": "qgrid2",
+  "name": "qgridjs",
   "version": "2.0.0",
   "description": "An Interactive Grid for Sorting and Filtering DataFrames in Jupyter Notebook",
   "author": "Quantopian Inc.",
