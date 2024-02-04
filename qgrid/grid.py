@@ -465,13 +465,13 @@ def show_grid(data_frame,
     if not isinstance(precision, Integral):
         raise TypeError("precision must be int, not %s" % type(precision))
     if column_options is None:
-        column_options = defaults.column_options
+        column_options = defaults.column_options.copy()
     else:
         options = defaults.column_options.copy()
         options.update(column_options)
         column_options = options
     if grid_options is None:
-        grid_options = defaults.grid_options
+        grid_options = defaults.grid_options.copy()
     else:
         options = defaults.grid_options.copy()
         options.update(grid_options)
