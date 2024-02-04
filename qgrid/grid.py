@@ -1618,7 +1618,7 @@ class QgridWidget(widgets.DOMWidget):
         """
         df = self._df
 
-        if not df.index.is_integer():
+        if not pd.api.types.is_integer_dtype(df.index):
             msg = "Cannot add a row to a table with a non-integer index"
             self.send({
                 'type': 'show_error',
