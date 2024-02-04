@@ -3,23 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. Welcome to QgridNext's documentation!
-.. =====================================
-
-.. .. toctree::
-..    :maxdepth: 2
-..    :caption: Contents:
-
-
-
-.. Indices and tables
-.. ==================
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`
-
-.. image:: https://media.quantopian.com/logos/open_source/qgrid-logo-03.png
+.. image:: https://raw.githubusercontent.com/zhihanyue/QgridNext/main/docs/_static/qgridnext_logo.png
     :target: https://qgridnext.readthedocs.io
     :width: 190px
     :align: center
