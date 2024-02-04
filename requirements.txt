@@ -1,2 +1,2 @@
-pandas>=0.18.0
+pandas>=0.20.0
 ipywidgets>=7.0.0
