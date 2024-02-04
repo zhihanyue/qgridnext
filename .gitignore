@@ -2,7 +2,9 @@ build/
 dist/
 node_modules/
 package-lock.json
-/qgrid/static/
+/js/static
+/js/static_nb
 *.egg-info/
 /clean.sh
 __pycache__/
+.*

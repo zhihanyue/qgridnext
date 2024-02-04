@@ -1,5 +1,3 @@
 include README.rst
 include LICENSE
-include requirements*.txt
-
-recursive-include qgrid/static *.*
+include requirements.txt

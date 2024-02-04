@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages, Command
+from setuptools import setup, find_packages, Command, find_namespace_packages
 from setuptools.command.sdist import sdist
 from setuptools.command.build_py import build_py
 from setuptools.command.egg_info import egg_info
@@ -6,6 +6,7 @@ from subprocess import check_call
 import os
 import sys
 import platform
+from glob import glob
 from os.path import (
     join, dirname, abspath, exists
 )
@@ -68,8 +69,8 @@ class NPM(Command):
     node_modules = join(node_root, 'node_modules')
 
     targets = [
-        join(here, 'qgrid', 'static', 'extension.js'),
-        join(here, 'qgrid', 'static', 'index.js')
+        join(here, 'js', 'static_nb', 'extension.js'),
+        join(here, 'js', 'static_nb', 'index.js')
     ]
 
     def initialize_options(self):
@@ -122,13 +123,6 @@ def read_requirements(basename):
     with open(reqs_file) as f:
         return [req.strip() for req in f.readlines()]
 
-def package_files(directory):
-    paths = []
-    for (path, directories, filenames) in os.walk(directory):
-        for filename in filenames:
-            paths.append(os.path.join(path, filename))
-    return paths
-
 setup_args = {
     'name': 'qgridnext',
     'version': version_ns['__version__'],
@@ -136,9 +130,12 @@ setup_args = {
     'long_description': LONG_DESCRIPTION,
     'include_package_data': True,
     'data_files': [
-        ('share/jupyter/nbextensions/qgrid', package_files('qgrid/static')),
+        ('etc/jupyter/nbconfig/notebook.d' , ['qgridnext.json']),
+        ('share/jupyter/nbextensions/qgridnext', glob('js/static_nb/*.*')),
+        ('share/jupyter/labextensions/qgridnext', glob('js/static/*.*') + ['install.json']),
+        ('share/jupyter/labextensions/qgridnext/static', glob('js/static/static/*.*'))
     ],
-    "python_requires": ">=3.6",
+    "python_requires": ">=3.7",
     'install_requires': read_requirements('requirements.txt'),
     'extras_require': {
         "test": [
@@ -146,7 +143,7 @@ setup_args = {
             "flake8>=3.6.0"
         ],
     },
-    'packages': find_packages(exclude=['qgrid.static']),
+    'packages': find_packages(),
     'zip_safe': False,
     'cmdclass': {
         'build_py': js_prerelease(build_py),
@@ -157,7 +154,7 @@ setup_args = {
 
     'author': 'Quantopian Inc.',
     'author_email': 'opensource@quantopian.com',
-    'url': 'https://github.com/quantopian/qgrid',
+    'url': 'https://github.com/zhihanyue/qgridnext',
     'license': 'Apache-2.0',
     'keywords': [
         'ipython',
@@ -173,7 +170,6 @@ setup_args = {
         'Topic :: Scientific/Engineering :: Information Analysis',
         'Topic :: Multimedia :: Graphics',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',

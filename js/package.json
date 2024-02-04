@@ -16,10 +16,11 @@
   ],
   "scripts": {
     "clean": "rimraf dist/",
-    "prepare": "webpack",
+    "prepare": "webpack && jupyter labextension build .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@jupyterlab/builder": "^4",
     "css-loader": "^6.10.0",
     "expose-loader": "^5.0.0",
     "file-loader": "^6.2.0",
@@ -31,7 +32,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@jupyter-widgets/base": "^6.0.6",
+    "@jupyter-widgets/base": "^6",
     "@jupyter-widgets/controls": "^3.1.5",
     "jquery": "^3.7.1",
     "jquery-ui-dist": "^1.13.2",

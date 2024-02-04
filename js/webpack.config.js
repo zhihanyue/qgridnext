@@ -38,7 +38,7 @@ module.exports = [
         entry: './src/extension.js',
         output: {
             filename: 'extension.js',
-            path: path.resolve(__dirname, '..', 'qgrid', 'static'),
+            path: path.resolve(__dirname, 'static_nb'),
             libraryTarget: 'amd'
         },
         plugins: plugins,
@@ -53,7 +53,7 @@ module.exports = [
         entry: './src/index.js',
         output: {
             filename: 'index.js',
-            path: path.resolve(__dirname, '..', 'qgrid', 'static'),
+            path: path.resolve(__dirname, 'static_nb'),
             libraryTarget: 'amd'
         },
         devtool: 'source-map',
