@@ -8,8 +8,7 @@ from .grid import (
     off,
     set_grid_option,
     show_grid,
-    QgridWidget,
-    QGridWidget,
+    QgridWidget
 )
 
 
@@ -32,6 +31,5 @@ __all__ = [
     "off",
     "set_grid_option",
     "show_grid",
-    "QgridWidget",
-    "QGridWidget",
+    "QgridWidget"
 ]

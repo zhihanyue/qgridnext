@@ -257,7 +257,7 @@ def set_grid_option(optname, optvalue):
     The options you can set here are the same ones
     that you can set via the ``grid_options`` parameter of the ``set_defaults``
     or ``show_grid`` functions.  See the `SlickGrid documentation
-    <https://github.com/mleibman/SlickGrid/wiki/Grid-Options>`_ for the full
+    <https://github.com/mleibman/SlickGrid/wiki/Grid-Options>`__ for the full
     list of available options.
     """
     defaults.grid_options[optname] = optvalue
@@ -397,7 +397,7 @@ def show_grid(data_frame,
 
     The first group of options are SlickGrid "grid options" which are
     described in the `SlickGrid documentation
-    <https://github.com/mleibman/SlickGrid/wiki/Grid-Options>`_.
+    <https://github.com/mleibman/SlickGrid/wiki/Grid-Options>`__.
 
     The second group of option are options that were added specifically
     for Qgrid and therefore are not documented in the SlickGrid documentation.
@@ -435,7 +435,7 @@ def show_grid(data_frame,
 
     The first group of options are SlickGrid "column options" which are
     described in the `SlickGrid documentation
-    <https://github.com/mleibman/SlickGrid/wiki/Column-Options>`_.
+    <https://github.com/mleibman/SlickGrid/wiki/Column-Options>`__.
 
     The ``editable`` option was added specifically for Qgrid and therefore is
     not documented in the SlickGrid documentation.  This option specifies
@@ -1825,7 +1825,3 @@ class QgridWidget(widgets.DOMWidget):
             'option_name': option_name,
             'option_value': option_value
         })
-
-
-# Alias for legacy support, since we changed the capitalization
-QGridWidget = QgridWidget

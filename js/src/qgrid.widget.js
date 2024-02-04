@@ -41,7 +41,7 @@ class QgridModel extends widgets.DOMWidgetModel {
 // View for the qgrid widget
 class QgridView extends widgets.DOMWidgetView {
   render() {
-    // subscribe to incoming messages from the QGridWidget
+    // subscribe to incoming messages from the QgridWidget
     this.model.on('msg:custom', this.handle_msg, this);
     this.initialize_qgrid();
   }
@@ -607,7 +607,7 @@ class QgridView extends widgets.DOMWidgetView {
   }
 
   /**
-   * Handle messages from the QGridWidget.
+   * Handle messages from the QgridWidget.
    */
   handle_msg(msg) {
     if (msg.type === 'draw_table') {
