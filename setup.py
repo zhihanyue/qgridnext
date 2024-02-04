@@ -130,7 +130,7 @@ def package_files(directory):
     return paths
 
 setup_args = {
-    'name': 'qgrid2',
+    'name': 'qgridnext',
     'version': version_ns['__version__'],
     'description': 'An Interactive Grid for Sorting and Filtering DataFrames in Jupyter',
     'long_description': LONG_DESCRIPTION,

@@ -12,8 +12,8 @@
 Qgrid API Documentation
 =======================
 
-Qgrid is a Jupyter notebook widget which uses `SlickGrid <https://github.com/mleibman/SlickGrid>`_ to render pandas
-DataFrames within a Jupyter notebook. This allows you to explore your DataFrames with intuitive scrolling, sorting, and
+Qgrid is a Jupyter widget which uses `SlickGrid <https://github.com/mleibman/SlickGrid>`_ to render pandas
+DataFrames within a Jupyter. This allows you to explore your DataFrames with intuitive scrolling, sorting, and
 filtering controls, as well as edit your DataFrames by double clicking cells.
 
 Qgrid was developed for use in `Quantopian's hosted research environment
