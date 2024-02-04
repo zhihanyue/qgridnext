@@ -1,4 +1,3 @@
-from __future__ import print_function
 from setuptools import setup, find_packages, Command
 from setuptools.command.sdist import sdist
 from setuptools.command.build_py import build_py
@@ -154,7 +153,7 @@ setup_args = {
     ],
     'install_requires': reqs,
     'extras_require': extras_require(),
-    'packages': find_packages(),
+    'packages': find_packages(exclude=['qgrid.static']),
     'zip_safe': False,
     'cmdclass': {
         'build_py': js_prerelease(build_py),
