@@ -3,4 +3,6 @@ dist/
 node_modules/
 package-lock.json
 /qgrid/static/
-/qgrid.egg-info/
+*.egg-info/
+/clean.sh
+__pycache__/
