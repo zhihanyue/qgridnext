@@ -24,7 +24,7 @@ log.set_verbosity(log.DEBUG)
 log.info('setup.py entered')
 log.info('$PATH=%s' % os.environ['PATH'])
 
-LONG_DESCRIPTION = 'An Interactive Grid for Sorting and Filtering DataFrames in Jupyter Notebook'
+LONG_DESCRIPTION = 'An Interactive Grid for Sorting and Filtering DataFrames in Jupyter'
 
 def js_prerelease(command, strict=False):
     """decorator for building minified js/css prior to another command"""
@@ -122,8 +122,6 @@ def read_requirements(basename):
     with open(reqs_file) as f:
         return [req.strip() for req in f.readlines()]
 
-reqs = read_requirements('requirements.txt')
-
 def package_files(directory):
     paths = []
     for (path, directories, filenames) in os.walk(directory):
@@ -131,28 +129,23 @@ def package_files(directory):
             paths.append(os.path.join(path, filename))
     return paths
 
-data_files = package_files('qgrid/static')
-
-
-def extras_require():
-    return {
+setup_args = {
+    'name': 'qgrid2',
+    'version': version_ns['__version__'],
+    'description': 'An Interactive Grid for Sorting and Filtering DataFrames in Jupyter',
+    'long_description': LONG_DESCRIPTION,
+    'include_package_data': True,
+    'data_files': [
+        ('share/jupyter/nbextensions/qgrid', package_files('qgrid/static')),
+    ],
+    "python_requires": ">=3.6",
+    'install_requires': read_requirements('requirements.txt'),
+    'extras_require': {
         "test": [
             "pytest>=2.8.5",
             "flake8>=3.6.0"
         ],
-    }
-
-setup_args = {
-    'name': 'qgrid2',
-    'version': version_ns['__version__'],
-    'description': 'An Interactive Grid for Sorting and Filtering DataFrames in Jupyter Notebook',
-    'long_description': LONG_DESCRIPTION,
-    'include_package_data': True,
-    'data_files': [
-        ('share/jupyter/nbextensions/qgrid', data_files),
-    ],
-    'install_requires': reqs,
-    'extras_require': extras_require(),
+    },
     'packages': find_packages(exclude=['qgrid.static']),
     'zip_safe': False,
     'cmdclass': {
