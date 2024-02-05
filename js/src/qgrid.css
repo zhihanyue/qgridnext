@@ -645,7 +645,7 @@
 
 #ui-datepicker-div.ui-datepicker .ui-icon {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font-family: "Font Awesome 5 Free", FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -658,10 +658,12 @@
 
 #ui-datepicker-div.ui-datepicker .ui-icon-circle-triangle-w:before {
     content: "\f053";
+    font-weight: bold !important;
 }
 
 #ui-datepicker-div.ui-datepicker .ui-icon-circle-triangle-e:before {
     content: "\f054";
+    font-weight: bold !important;
 }
 
 
