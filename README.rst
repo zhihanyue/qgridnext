@@ -4,6 +4,10 @@
     :align: center
     :alt: qgrid
 
+
+Under active testing and will be released soon. Docs will be updated later.
+
+
 =====
 qgrid
 =====
