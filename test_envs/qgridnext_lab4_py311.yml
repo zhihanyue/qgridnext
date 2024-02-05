@@ -1,0 +1,9 @@
+name: qgridnext_lab4_py311
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyterlab=4
+  - ipywidgets
+  - pandas
+  - pytest

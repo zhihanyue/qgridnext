@@ -941,9 +941,8 @@ class QgridWidget(widgets.DOMWidget):
             self._row_styles = row_styles
         else:
             self._row_styles = {}
-
-        df_json = df.to_json(None,
-                             orient='table',
+        
+        df_json = df.to_json(orient='table',
                              date_format='iso',
                              double_precision=self.precision)
 
@@ -1022,8 +1021,7 @@ class QgridWidget(widgets.DOMWidget):
         # and then call 'to_json' again to get a new version of the table
         # json that has interval columns replaced with text columns
         if len(self._interval_columns) > 0 or len(self._period_columns) > 0:
-            df_json = df.to_json(None,
-                                 orient='table',
+            df_json = df.to_json(orient='table',
                                  date_format='iso',
                                  double_precision=self.precision)
 
