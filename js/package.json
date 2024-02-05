@@ -32,8 +32,9 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@juggle/resize-observer": "^3.4.0",
     "@jupyter-widgets/base": "^6",
-    "@jupyter-widgets/controls": "^3.1.5",
+    "@jupyter-widgets/controls": "^3",
     "jquery": "^3.7.1",
     "jquery-ui-dist": "^1.13.2",
     "moment": "^2.30.1",

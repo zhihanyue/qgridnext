@@ -8,6 +8,7 @@ var text_filter = require('./qgrid.textfilter.js');
 var boolean_filter = require('./qgrid.booleanfilter.js');
 var editors = require('./qgrid.editors.js');
 var jquery_ui = require('jquery-ui-dist/jquery-ui.min.js');
+var ResizeObserverPolyfill = require('@juggle/resize-observer').ResizeObserver;
 
 require('slickgrid-qgridnext/slick.core.js');
 require('slickgrid-qgridnext/lib/jquery.event.drag-2.3.0.js');
@@ -377,9 +378,12 @@ class QgridView extends widgets.DOMWidgetView {
     // onHeaderCellRendered event is triggered.
     this.slick_grid.setColumns(this.slick_grid.getColumns());
 
-    $(window).on("resize", () => {
+    // Uses native or polyfill, depending on browser support.
+    const ResizeObserver = window.ResizeObserver || ResizeObserverPolyfill;
+    const ro = new ResizeObserver((entries, observer) => {
       this.slick_grid.resizeCanvas();
     });
+    ro.observe(this.$el[0]);
 
     this.slick_grid.setSortColumns([]);
 
