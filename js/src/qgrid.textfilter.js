@@ -215,8 +215,8 @@ class TextFilter extends filter_base.FilterBase {
     this.filter_grid.render();
 
     this.security_search = this.filter_elem.find(".search-input");
-    this.security_search.keyup((e) => this.handle_text_input_key_up(e));
-    this.security_search.click((e) => this.handle_text_input_click(e));
+    this.security_search.on('keyup', (e) => this.handle_text_input_key_up(e));
+    this.security_search.on('click', (e) => this.handle_text_input_click(e));
 
     this.filter_grid.onClick.subscribe(
         (e, args) => this.handle_grid_clicked(e, args)
@@ -225,7 +225,7 @@ class TextFilter extends filter_base.FilterBase {
         (e, args) => this.handle_grid_key_down(e, args)
     );
 
-    this.filter_elem.find("a.select-all-link").click((e) => {
+    this.filter_elem.find("a.select-all-link").on('click', (e) => {
       this.ignore_selection_changed = true;
       this.reset_filter();
       this.filter_list = "all";
@@ -290,14 +290,14 @@ class TextFilter extends filter_base.FilterBase {
   }
 
   focus_on_search_box() {
-    this.security_search.focus().val(this.search_string);
+    this.security_search.trigger('focus').val(this.search_string);
     this.filter_grid.resetActiveCell();
   }
 
   handle_text_input_key_up(e) {
     var old_search_string = this.search_string;
     if (e.keyCode == 40) { // down arrow
-      this.filter_grid.focus();
+      this.filter_grid.trigger('focus');
       this.filter_grid.setActiveCell(0, 0);
       return;
     }

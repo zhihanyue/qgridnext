@@ -113,7 +113,7 @@ class QgridView extends widgets.DOMWidgetView {
 
   bind_toolbar_events() {
     this.buttons.off('click');
-    this.buttons.click((e) => {
+    this.buttons.on('click', (e) => {
       let clicked = $(e.target);
       if (clicked.hasClass('disabled')){
         return;
@@ -199,9 +199,9 @@ class QgridView extends widgets.DOMWidgetView {
               this.input = $(args.container).find('.editor-text');
               this.input.val(formatted_val);
               this.input[0].defaultValue = formatted_val;
-              this.input.select();
+              this.input.trigger("select");
               this.input.on("keydown.nav", function (e) {
-                if (e.keyCode === $.ui.keyCode.LEFT || e.keyCode === $.ui.keyCode.RIGHT) {
+                if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
                   e.stopImmediatePropagation();
                 }
               });
@@ -377,7 +377,7 @@ class QgridView extends widgets.DOMWidgetView {
     // onHeaderCellRendered event is triggered.
     this.slick_grid.setColumns(this.slick_grid.getColumns());
 
-    $(window).resize(() => {
+    $(window).on("resize", () => {
       this.slick_grid.resizeCanvas();
     });
 
@@ -436,7 +436,7 @@ class QgridView extends widgets.DOMWidgetView {
     };
 
     if (this.grid_options.sortable != false) {
-      this.grid_header.click(handle_header_click)
+      this.grid_header.on('click', handle_header_click)
     }
 
     this.slick_grid.onViewportChanged.subscribe((e) => {
@@ -491,17 +491,17 @@ class QgridView extends widgets.DOMWidgetView {
 
     setTimeout(() => {
       this.$el.closest('.output_wrapper')
-          .find('.out_prompt_overlay,.output_collapsed').click(() => {
+          .find('.out_prompt_overlay,.output_collapsed').on('click', () => {
         setTimeout(() => {
           this.slick_grid.resizeCanvas();
         }, 1);
       });
 
       this.resize_handles = this.grid_header.find('.slick-resizable-handle');
-      this.resize_handles.mousedown((e) => {
+      this.resize_handles.on('mousedown', (e) => {
         this.resizing_column = true;
       });
-      $(document).mouseup(() => {
+      $(document).on('mouseup', () => {
         // wait for the column header click handler to run before
         // setting the resizing_column flag back to false
         setTimeout(() => {

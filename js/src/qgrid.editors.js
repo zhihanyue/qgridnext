@@ -67,7 +67,7 @@ class SelectEditor {
     this.elem = $("<SELECT tabIndex='0' class='editor-select'>");
 
     for (var i in this.options) {
-      var opt = $.trim(this.options[i]); // remove any white space including spaces after comma
+      var opt = this.options[i].trim(); // remove any white space including spaces after comma
       var opt_elem = $("<OPTION>");
       opt_elem.val(opt);
       opt_elem.text(opt);
@@ -75,7 +75,7 @@ class SelectEditor {
     }
 
     this.elem.appendTo(args.container);
-    this.elem.focus();
+    this.elem.trigger("focus");
   }
 
   destroy() {
@@ -83,7 +83,7 @@ class SelectEditor {
   }
 
   focus() {
-    this.elem.focus();
+    this.elem.trigger("focus");
   }
 
   loadValue(item) {

@@ -45,9 +45,9 @@ class BooleanFilter extends filter_base.FilterBase {
     super.initialize_controls();
     this.radio_buttons = this.filter_elem.find('.bool-filter-radio');
 
-    this.filter_elem.find('label').click((e) => {
+    this.filter_elem.find('label').on('click', (e) => {
       var radio_id = $(e.currentTarget).attr('for');
-      this.radio_buttons.filter(`#${radio_id}`).click();
+      this.radio_buttons.filter(`#${radio_id}`).trigger('click');
     });
 
     if (this.selected == null) {

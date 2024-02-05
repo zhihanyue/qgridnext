@@ -36,7 +36,7 @@ class FilterBase {
     `);
     this.filter_icon = this.filter_btn.find('.filter-icon');
     this.filter_btn.appendTo(this.column_header_elem);
-    this.filter_btn.click((e) => this.handle_filter_button_clicked(e));
+    this.filter_btn.on('click', (e) => this.handle_filter_button_clicked(e));
   }
 
   create_filter_elem() {
@@ -151,18 +151,10 @@ class FilterBase {
   }
 
   initialize_controls() {
-    this.filter_elem.find("a.reset-link").click(
-        (e) => this.reset_filter()
-    );
-    this.filter_elem.find("i.close-button").click(
-        (e) => this.hide_filter()
-    );
-    $(document.body).bind("mousedown",
-        (e) => this.handle_body_mouse_down(e)
-    );
-    $(document.body).bind("keyup",
-        (e) => this.handle_body_key_up(e)
-    );
+    this.filter_elem.find("a.reset-link").on('click', (e) => this.reset_filter());
+    this.filter_elem.find("i.close-button").on('click', (e) => this.hide_filter());
+    $(document.body).on("mousedown", (e) => this.handle_body_mouse_down(e));
+    $(document.body).on("keyup", (e) => this.handle_body_key_up(e));
   }
 
   send_filter_changed() {
