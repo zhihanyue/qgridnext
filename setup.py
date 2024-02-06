@@ -69,6 +69,8 @@ class NPM(Command):
     node_modules = join(node_root, 'node_modules')
 
     targets = [
+        join(here, 'js', 'static'),
+        join(here, 'js', 'static', 'static'),
         join(here, 'js', 'static_nb', 'extension.js'),
         join(here, 'js', 'static_nb', 'index.js')
     ]
