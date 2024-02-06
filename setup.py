@@ -160,8 +160,7 @@ setup_args = {
         'jsdeps': NPM,
     },
 
-    'author': 'Quantopian Inc.',
-    'author_email': 'opensource@quantopian.com',
+    'author': 'QgridNext',
     'url': 'https://github.com/zhihanyue/qgridnext',
     'license': 'Apache-2.0',
     'keywords': [

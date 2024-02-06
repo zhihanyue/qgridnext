@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'QgridNext'
-copyright = '2024, Quantopian, Inc.'
-author = 'Quantopian, Inc.'
+copyright = '2024, QgridNext'
+author = 'QgridNext'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

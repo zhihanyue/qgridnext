@@ -1,0 +1,10 @@
+name: qgridnext-py38-vl03
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - ipywidgets=7.8.0
+  - pandas=1.5.3
+  - voila=0.3.7
+  - pytest
+  - nodejs=20
