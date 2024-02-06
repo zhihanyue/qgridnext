@@ -1,3 +1,7 @@
 include README.rst
 include LICENSE
 include requirements.txt
+
+recursive-include js/src *.*
+include js/package.json
+include js/webpack.config.js

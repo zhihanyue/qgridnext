@@ -8,3 +8,4 @@ package-lock.json
 *.egg-info/
 /clean.sh
 __pycache__/
+.ipynb_checkpoints/

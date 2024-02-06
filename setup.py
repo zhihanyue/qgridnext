@@ -7,33 +7,30 @@ import os
 import sys
 import platform
 from glob import glob
-from os.path import (
-    join, dirname, abspath, exists
-)
+from os.path import join, dirname, abspath, exists
 
 here = dirname(abspath(__file__))
-node_root = join(here, 'js')
-is_repo = exists(join(here, '.git'))
 
+node_root = join(here, 'js')
 npm_path = os.pathsep.join([
     join(node_root, 'node_modules', '.bin'),
                 os.environ.get('PATH', os.defpath),
 ])
+
+with open(join(here, 'README.rst'), 'r') as f:
+    readme = f.read()
 
 from distutils import log
 log.set_verbosity(log.DEBUG)
 log.info('setup.py entered')
 log.info('$PATH=%s' % os.environ['PATH'])
 
-LONG_DESCRIPTION = 'An Interactive Grid for Sorting and Filtering DataFrames in Jupyter'
-
-def js_prerelease(command, strict=False):
+def js_prerelease(command):
     """decorator for building minified js/css prior to another command"""
     class DecoratedCommand(command):
         def run(self):
             jsdeps = self.distribution.get_command_obj('jsdeps')
-            if not is_repo and all(exists(t) for t in jsdeps.targets):
-                # sdist, nothing to do
+            if all(exists(t) for t in jsdeps.targets):
                 command.run(self)
                 return
 
@@ -41,14 +38,11 @@ def js_prerelease(command, strict=False):
                 self.distribution.run_command('jsdeps')
             except Exception as e:
                 missing = [t for t in jsdeps.targets if not exists(t)]
-                if strict or missing:
-                    log.warn('rebuilding js and css failed')
-                    if missing:
-                        log.error('missing files: %s' % missing)
-                    raise e
-                else:
-                    log.warn('rebuilding js and css failed (not a problem)')
-                    log.warn(str(e))
+                log.warn('building js and css failed')
+                if missing:
+                    log.error('missing files: %s' % missing)
+                raise e
+
             command.run(self)
             update_package_data(self.distribution)
     return DecoratedCommand
@@ -60,6 +54,12 @@ def update_package_data(distribution):
     # re-init build_py options which load package_data
     build_py.finalize_options()
 
+data_files = [
+    ('etc/jupyter/nbconfig/notebook.d' , ['qgridnext.json']),
+    ('share/jupyter/nbextensions/qgridnext', glob('js/static_nb/*.*')),
+    ('share/jupyter/labextensions/qgridnext', glob('js/static/*.*') + ['install.json']),
+    ('share/jupyter/labextensions/qgridnext/static', glob('js/static/static/*.*'))
+]
 
 class NPM(Command):
     description = 'install package.json dependencies using npm'
@@ -102,7 +102,7 @@ class NPM(Command):
         env['PATH'] = npm_path
 
         if self.should_run_npm_install():
-            log.info("Installing build dependencies with npm.  This may take a while...")
+            log.info("Installing build dependencies with npm. This may take a while...")
             check_call(['npm', 'install'], cwd=node_root, stdout=sys.stdout, stderr=sys.stderr)
             os.utime(self.node_modules, None)
 
@@ -115,6 +115,17 @@ class NPM(Command):
 
         # update package data in case this created new files
         update_package_data(self.distribution)
+
+        # refresh data files
+        global data_files
+        data_files += [
+            ('etc/jupyter/nbconfig/notebook.d' , ['qgridnext.json']),
+            ('share/jupyter/nbextensions/qgridnext', glob('js/static_nb/*.*')),
+            ('share/jupyter/labextensions/qgridnext', glob('js/static/*.*') + ['install.json']),
+            ('share/jupyter/labextensions/qgridnext/static', glob('js/static/static/*.*'))
+        ]
+        log.info("Refreshed data files")
+
 
 version_ns = {}
 with open(join(here, 'qgrid', '_version.py')) as f:
@@ -129,14 +140,9 @@ setup_args = {
     'name': 'qgridnext',
     'version': version_ns['__version__'],
     'description': 'An Interactive Grid for Sorting and Filtering DataFrames in Jupyter',
-    'long_description': LONG_DESCRIPTION,
+    'long_description': readme,
     'include_package_data': True,
-    'data_files': [
-        ('etc/jupyter/nbconfig/notebook.d' , ['qgridnext.json']),
-        ('share/jupyter/nbextensions/qgridnext', glob('js/static_nb/*.*')),
-        ('share/jupyter/labextensions/qgridnext', glob('js/static/*.*') + ['install.json']),
-        ('share/jupyter/labextensions/qgridnext/static', glob('js/static/static/*.*'))
-    ],
+    'data_files': data_files,
     "python_requires": ">=3.7",
     'install_requires': read_requirements('requirements.txt'),
     'extras_require': {
@@ -150,7 +156,7 @@ setup_args = {
     'cmdclass': {
         'build_py': js_prerelease(build_py),
         'egg_info': js_prerelease(egg_info),
-        'sdist': js_prerelease(sdist, strict=True),
+        'sdist': js_prerelease(sdist),
         'jsdeps': NPM,
     },
 
@@ -164,13 +170,16 @@ setup_args = {
         'widgets',
     ],
     'classifiers': [
-        'Development Status :: 4 - Beta',
-        'Framework :: IPython',
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
         'Topic :: Office/Business :: Financial',
         'Topic :: Scientific/Engineering :: Information Analysis',
         'Topic :: Multimedia :: Graphics',
+        "Framework :: Jupyter",
+        "Framework :: Jupyter :: JupyterLab",
+        "Framework :: Jupyter :: JupyterLab :: 4",
+        "Framework :: Jupyter :: JupyterLab :: Extensions",
+        "Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt",
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
