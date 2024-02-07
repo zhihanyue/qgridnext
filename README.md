@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="230px" src="https://raw.githubusercontent.com/zhihanyue/QgridNext/main/docs/_static/qgridnext_logo.png">
+  <img width="230px" src="https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/qgridnext_logo.png">
 </h1>
 <div align="center">
 
@@ -20,7 +20,7 @@ QgridNext is compatible with recent versions of Jupyter:
 |:---------:|:------------:|:--------:|:-----------:|
 |  v2.0.0   |   v3 - v4    | v5 - v7  | v0.2 - v0.5 |
 
-The test environments are provided in the [test_envs](https://github.com/zhihanyue/QgridNext/tree/main/test_envs) folder. You can try the widget in these environments easily.
+The test environments are provided in the [test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs) folder. You can try the widget in these environments easily.
 
 
 ## QgridNext V2.0.0
@@ -135,15 +135,15 @@ jupyter labextension enable qgridnext  # enable it if disabled
 
 ## Testing
 
-Multiple test environments are provided in [test_envs](https://github.com/zhihanyue/QgridNext/tree/main/test_envs). You can perform automated tests by pytest, or manually test it in your browser.
+Multiple test environments are provided in [test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs). You can perform automated tests by pytest, or manually test it in your browser.
 
 ## Development install
 
 Note: You will need JupyterLab 4 and NodeJS to build the extension package.
 
 ```bash
-git clone https://github.com/zhihanyue/QgridNext
-cd QgridNext
+git clone https://github.com/zhihanyue/qgridnext
+cd qgridnext
 pip install -e .  # Install package in development mode
 jupyter labextension develop . --overwrite  # Link your development version of the extension with JupyterLab
 

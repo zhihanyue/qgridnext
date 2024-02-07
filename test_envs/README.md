@@ -3,8 +3,8 @@
 To facilitate testing QgridNext across various environments, this directory includes several conda environment files (*.yml). You can test QgridNext in these environments by following the steps below:
 
 ```sh
-git clone https://github.com/zhihanyue/QgridNext
-cd QgridNext
+git clone https://github.com/zhihanyue/qgridnext
+cd qgridnext
 conda env create -f test_envs/xxx.yml
 conda activate qgridnext-xxx
 pytest   # test basic functions
