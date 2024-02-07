@@ -9,7 +9,7 @@ conda activate qgridnext-xxx
 pip install .   # install QgridNext
 pytest   # test basic functions
 
-# To test QgridNext's compatibility, run jupyter and check test.ipynb manually:
+# To test QgridNext's compatibility, run jupyter and check example.ipynb manually in your browser:
 bash test_envs/launch_lab.sh   # run jupyter lab
 bash test_envs/launch_notebook.sh  # run jupyter notebook
 bash test_envs/launch_voila.sh  # run voila
