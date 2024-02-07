@@ -1,4 +1,4 @@
-name: qgridnext-py311-lab4-nb7-vl05
+name: qgridnext-dev
 channels:
   - conda-forge
 dependencies:
@@ -9,6 +9,4 @@ dependencies:
   - notebook=7.0.7
   - voila=0.5.5
   - pytest
-  - pip
-  - pip:
-    - qgridnext==2.0.0rc0
+  - nodejs=20

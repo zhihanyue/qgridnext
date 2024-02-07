@@ -7,7 +7,6 @@ dependencies:
   - pandas=1.5.3
   - voila=0.3.7
   - pytest
-  - nodejs=20
   - pip
   - pip:
     - qgridnext==2.0.0rc0

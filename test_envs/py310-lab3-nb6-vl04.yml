@@ -9,7 +9,6 @@ dependencies:
   - notebook=6.5.6
   - voila=0.4.3
   - pytest
-  - nodejs=20
   - pip
   - pip:
     - qgridnext==2.0.0rc0
