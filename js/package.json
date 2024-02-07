@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist/",
-    "prepare": "webpack && jupyter labextension build .",
+    "prepare": "webpack && jupyter labextension build . && shx cp ./install.json static/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -27,6 +27,7 @@
     "jshint": "^2.13.6",
     "json-loader": "^0.5.7",
     "rimraf": "^5.0.5",
+    "shx": "^0.3.4",
     "style-loader": "^3.3.4",
     "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4"

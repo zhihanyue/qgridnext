@@ -2,6 +2,7 @@ from setuptools import setup, find_packages, Command
 from setuptools.command.sdist import sdist
 from setuptools.command.build_py import build_py
 from setuptools.command.egg_info import egg_info
+from setuptools.command.develop import develop
 from subprocess import check_call
 import os
 import sys
@@ -25,6 +26,13 @@ log.set_verbosity(log.DEBUG)
 log.info('setup.py entered')
 log.info('$PATH=%s' % os.environ['PATH'])
 
+data_files = [
+    ('etc/jupyter/nbconfig/notebook.d' , ['qgridnext.json']),
+    ('share/jupyter/nbextensions/qgridnext', glob('js/static_nb/*.*')),
+    ('share/jupyter/labextensions/qgridnext', glob('js/static/*.*')),
+    ('share/jupyter/labextensions/qgridnext/static', glob('js/static/static/*.*'))
+]
+
 def js_prerelease(command):
     """decorator for building minified js/css prior to another command"""
     class DecoratedCommand(command):
@@ -47,19 +55,28 @@ def js_prerelease(command):
             update_package_data(self.distribution)
     return DecoratedCommand
 
+def link_data_files(command):
+    class DecoratedCommand(command):
+        def run(self):
+            command.run(self)
+            tasks = [
+                (join(sys.prefix, 'etc/jupyter/nbconfig/notebook.d'), 'qgridnext.json', abspath('qgridnext.json')),
+                (join(sys.prefix, 'share/jupyter/nbextensions'), 'qgridnext', abspath('js/static_nb')),
+                (join(sys.prefix, 'share/jupyter/labextensions'), 'qgridnext', abspath('js/static'))
+            ]
+            for dest_dir, dest_fn, src_path in tasks:
+                log.info("symlinking " + src_path + " to " + join(dest_dir, dest_fn))
+                os.makedirs(dest_dir, exist_ok=True)
+                os.symlink(src_path, join(dest_dir, dest_fn))
+
+    return DecoratedCommand
+
 def update_package_data(distribution):
     """update package_data to catch changes during setup"""
     build_py = distribution.get_command_obj('build_py')
     # distribution.package_data = find_package_data()
     # re-init build_py options which load package_data
     build_py.finalize_options()
-
-data_files = [
-    ('etc/jupyter/nbconfig/notebook.d' , ['qgridnext.json']),
-    ('share/jupyter/nbextensions/qgridnext', glob('js/static_nb/*.*')),
-    ('share/jupyter/labextensions/qgridnext', glob('js/static/*.*') + ['install.json']),
-    ('share/jupyter/labextensions/qgridnext/static', glob('js/static/static/*.*'))
-]
 
 class NPM(Command):
     description = 'install package.json dependencies using npm'
@@ -96,7 +113,7 @@ class NPM(Command):
     def run(self):
         has_npm = self.has_npm()
         if not has_npm:
-            log.error("`npm` unavailable.  If you're running this command using sudo, make sure `npm` is available to sudo")
+            log.error("`npm` unavailable. If you're running this command using sudo, make sure `npm` is available to sudo")
 
         env = os.environ.copy()
         env['PATH'] = npm_path
@@ -121,7 +138,7 @@ class NPM(Command):
         data_files += [
             ('etc/jupyter/nbconfig/notebook.d' , ['qgridnext.json']),
             ('share/jupyter/nbextensions/qgridnext', glob('js/static_nb/*.*')),
-            ('share/jupyter/labextensions/qgridnext', glob('js/static/*.*') + ['install.json']),
+            ('share/jupyter/labextensions/qgridnext', glob('js/static/*.*')),
             ('share/jupyter/labextensions/qgridnext/static', glob('js/static/static/*.*'))
         ]
         log.info("Refreshed data files")
@@ -158,6 +175,7 @@ setup_args = {
         'build_py': js_prerelease(build_py),
         'egg_info': js_prerelease(egg_info),
         'sdist': js_prerelease(sdist),
+        'develop': link_data_files(js_prerelease(develop)),
         'jsdeps': NPM,
     },
 

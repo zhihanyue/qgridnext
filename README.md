@@ -137,19 +137,30 @@ jupyter labextension enable qgridnext  # enable it if disabled
 
 Multiple test environments are provided in [test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs). You can perform automated tests by pytest, or manually test it in your browser.
 
-## Development install
+## Development
 
-Note: You will need JupyterLab 4 and NodeJS to build the extension package.
+Note: JupyterLab 4 and NodeJS are required to build the extension package. You can use `dev.yml` in [test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs) for a quick setup.
 
 ```bash
 git clone https://github.com/zhihanyue/qgridnext
 cd qgridnext
-pip install -e .  # Install package in development mode
-jupyter labextension develop . --overwrite  # Link your development version of the extension with JupyterLab
-
-# Rebuild extension JS source after making changes
-npm --prefix ./js
+pip install -ve .  # Install package in development mode
 ```
+
+`pip install -ve .` installs the package into your python environment as a symlink. It also creates symlinks of built JS extensions for your Jupyter environments automatically (implemented by our custom command in `setup.py`). After making any changes to the JS code, just rebuild it by:
+
+```bash
+npm --prefix ./js install
+```
+
+When uninstalling it, you need to clean up the JS symlinks via script `unlink_dev.py`:
+
+```bash
+pip uninstall qgridnext
+python ./unlink_dev.py
+```
+
+
 ## Contributing
 
 All contributions, bug reports, bug fixes, documentation improvements, enhancements, and ideas are welcome. 
