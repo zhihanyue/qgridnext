@@ -17,7 +17,7 @@ npm_path = os.pathsep.join([
                 os.environ.get('PATH', os.defpath),
 ])
 
-with open(join(here, 'README.rst'), 'r') as f:
+with open(join(here, 'README.md'), 'r') as f:
     readme = f.read()
 
 from distutils import log
@@ -141,6 +141,7 @@ setup_args = {
     'version': version_ns['__version__'],
     'description': 'An Interactive Grid for Sorting and Filtering DataFrames in Jupyter',
     'long_description': readme,
+    'long_description_content_type': 'text/markdown',
     'include_package_data': True,
     'data_files': data_files,
     "python_requires": ">=3.7",
