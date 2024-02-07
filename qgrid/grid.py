@@ -1405,7 +1405,7 @@ class QgridWidget(widgets.DOMWidget):
             self.log.exception("Unhandled exception while handling msg")
 
     def _handle_qgrid_msg_helper(self, content):
-        """Handle incoming messages from the QGridView"""
+        """Handle incoming messages from the QgridView"""
         if 'type' not in content:
             return
 
