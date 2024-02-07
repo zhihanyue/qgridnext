@@ -1,2 +1,2 @@
 sphinx-rtd-theme
-qgridnext @ git+https://github.com/zhihanyue/QgridNext@main
+qgridnext
