@@ -11,6 +11,7 @@
 
 Qgrid is a Jupyter widget that utilizes [SlickGrid](https://github.com/mleibman/SlickGrid) to render pandas DataFrames within JupyterLab/Notebook. This allows you to explore your DataFrames with intuitive scrolling, sorting, and filtering controls, as well as edit your DataFrames by double clicking cells. Initially developed by Quantopian, [its repo](https://github.com/quantopian/qgrid) ceased maintenance in 2020. QgridNext aims to continue maintaining and improving it for future Jupyter versions.
 
+![filtering_demo](https://raw.githubusercontent.com/zhihanyue/qgridNext/main/docs/_static/filtering_demo.gif)
 
 ## Compatibility
 
@@ -68,13 +69,16 @@ QgridNext supports Python 3.7+ and depends on the following packages:
 
 ### Exploring Dataframes
 
-**Basic usage:**
+**Render your DataFrame:**
 ```py
 from qgrid import show_grid
 show_grid(your_df)
 ```
+![multi_index](https://raw.githubusercontent.com/zhihanyue/qgridNext/main/docs/_static/multi_index.png)
 
-Qgrid supports multi-indexed DataFrames, merging some of the index cells merged for readability.
+Qgrid is fast for large data. For example, you can render a DataFrame with 10,000,000 rows in about 0.8 second:
+![render_time](https://raw.githubusercontent.com/zhihanyue/qgridNext/main/docs/_static/render_time.png)
+
 
 **Column-specific options:** Qgrid has the ability to set a number of options on a per column basis. This allows you to do things like explicitly specify which column should be sortable, editable, etc. For example, if you wanted to prevent editing on all columns except for a column named 'A', you could do the following:
 
@@ -120,6 +124,7 @@ qgrid_widget.observe(handle_df_change, names=['_df'])
 
 Event handlers enable interesting integrations with other widgets/visualizations, like using qgrid to filter a DataFrame also displayed by another visualization.
 
+![linked_to_scatter](https://raw.githubusercontent.com/zhihanyue/qgridNext/main/docs/_static/linked_to_scatter.gif)
 
 For more examples, see the [events notebook](https://github.com/zhihanyue/qgridnext-demos/blob/master/events.ipynb).
 
@@ -163,4 +168,4 @@ python ./unlink_dev.py
 
 ## Contributing
 
-All contributions, bug reports, bug fixes, documentation improvements, enhancements, and ideas are welcome. 
+All contributions, bug reports, bug fixes, documentation improvements, enhancements, demo improvements and ideas are welcome.
