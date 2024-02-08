@@ -69,14 +69,15 @@ QgridNext supports Python 3.7+ and depends on the following packages:
 
 ### Exploring Dataframes
 
-**Render your DataFrame:**
+**Rendering your DataFrame:**
 ```py
 from qgrid import show_grid
 show_grid(your_df)
 ```
-![multi_index](https://raw.githubusercontent.com/zhihanyue/qgridNext/main/docs/_static/multi_index.png)
+<!-- ![multi_index](https://raw.githubusercontent.com/zhihanyue/qgridNext/main/docs/_static/multi_index.png) -->
 
-Qgrid is fast for large data. For example, you can render a DataFrame with 10,000,000 rows in about 0.8 second:
+Qgrid excels in handling large DataFrames. For example, it can render a DataFrame with 10,000,000 rows in about 0.8 seconds:
+
 ![render_time](https://raw.githubusercontent.com/zhihanyue/qgridNext/main/docs/_static/render_time.png)
 
 
@@ -99,7 +100,7 @@ show_grid(df, row_edit_callback=can_edit_row)
 **Updating an existing Qgrid widget**: You can update an existing Qgrid widget's state using APIs like [edit_cell](https://qgridnext.readthedocs.io/en/latest/api.html#qgrid.QgridWidget.edit_cell), [change_selection](https://qgridnext.readthedocs.io/en/latest/api.html#qgrid.QgridWidget.change_selection), [toggle_editable](https://qgridnext.readthedocs.io/en/latest/api.html#qgrid.QgridWidget.toggle_editable), and [change_grid_option](https://qgridnext.readthedocs.io/en/latest/api.html#qgrid.QgridWidget.change_grid_option).
 
 
-### Event API
+### Event handlers
 
 Use `on` and `off` methods to attach/detach event handlers. They're available on both the `qgrid` module (see [qgrid.on](https://qgridnext.readthedocs.io/en/latest/api.html#qgrid.on)) and individual `QgridWidget` instances (see [qgrid.QgridWidget.on](https://qgridnext.readthedocs.io/en/latest/api.html#qgrid.QgridWidget.on)).
 
