@@ -9,7 +9,7 @@
 
 <br>
 
-Qgrid is a Jupyter widget that utilizes [SlickGrid](https://github.com/mleibman/SlickGrid) to render pandas DataFrames within JupyterLab/Notebook. This allows you to explore your DataFrames with intuitive scrolling, sorting, and filtering controls, as well as edit your DataFrames by double clicking cells. Initially developed by Quantopian, [its repo](https://github.com/quantopian/qgrid) ceased maintenance in 2020. QgridNext aims to continue maintaining and improving it for future Jupyter versions.
+Qgrid is a Jupyter widget that utilizes [SlickGrid](https://github.com/mleibman/SlickGrid) to render pandas DataFrames within JupyterLab/Notebook. This allows you to explore your DataFrames with intuitive scrolling, sorting, and filtering controls, as well as edit your DataFrames by double clicking cells. Initially developed by Quantopian, [Qgrid](https://github.com/quantopian/qgrid) ceased maintenance in 2020. QgridNext aims to continue maintaining and improving it for future Jupyter versions.
 
 ![filtering_demo](https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/filtering_demo.gif)
 
@@ -48,6 +48,8 @@ The first release v2.0.0 significantly improves compatibility and addresses bugs
 
 ## Installation
 
+**Note: as a drop-in replacement for Qgrid, the import name remains qgrid, although the distribution is renamed to qgridnext. Please make sure you install qgridnext without having qgrid installed.**
+
 Installing with pip:
 
 ```bash
@@ -75,7 +77,7 @@ from qgrid import show_grid
 show_grid(your_df)
 ```
 
-Qgrid excels in handling large DataFrames. For example, it can render a DataFrame with 10,000,000 rows in about 0.8 seconds:
+QGrid loads DataFrame lazily, which ensures efficiency for rendering large DataFrames. For example, it can render a DataFrame with 10,000,000 rows in 1 second:
 
 ![render_time](https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/render_time.png)
 
