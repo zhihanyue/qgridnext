@@ -130,19 +130,22 @@ Event handlers enable interesting integrations with other widgets/visualizations
 
 For more examples, see the [events notebook](https://github.com/zhihanyue/qgridnext-demos/blob/master/events.ipynb).
 
-
-## Troubleshoot
-
-If you are not seeing the widget, check if the extension is installed and enabled:
-
-```bash
-jupyter labextension list
-jupyter labextension enable qgridnext  # enable it if disabled
-```
-
 ## Testing
 
 Multiple test environments are provided in [test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs). You can perform automated tests by pytest, or manually test it in your browser.
+
+## Troubleshoot
+
+If the widget does not appear, first check if the extension is installed and enabled:
+
+```bash
+jupyter labextension list
+jupyter labextension enable qgridnext  # enable it if it's disabled
+```
+
+If you encounter an error message like `displaying widget: model not found` or `Loading widget...`, it may indicate a version incompatibility between your ipywidgets and JupyterLab. In most cases, upgrading the ipywidgets version will solve the problem. You can also refer to the environment configurations listed in [test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs).
+
+Utilizing the test environments ([test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs)) is recommended for efficiently diagnosing any issues within your current setup. If the widget works correctly within the test environment but not in your own, it's likely due to version incompatibilities, which can be resolved by adjusting the versions in your environment accordingly.
 
 ## Development
 
