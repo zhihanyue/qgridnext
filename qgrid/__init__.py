@@ -1,35 +1,4 @@
-from ._version import __version__  # noqa F401
+import warnings
+warnings.warn("qgird is an alias of qgridnext for backward compatibility. It is recommended to use `import qgridnext` instead.", DeprecationWarning, stacklevel=2)
 
-from .grid import (
-    enable,
-    disable,
-    set_defaults,
-    on,
-    off,
-    set_grid_option,
-    show_grid,
-    QgridWidget
-)
-
-
-def _jupyter_nbextension_paths():
-    return [
-        {
-            "section": "notebook",
-            "src": "static",
-            "dest": "qgridnext",
-            "require": "qgridnext/extension",
-        }
-    ]
-
-
-__all__ = [
-    "enable",
-    "disable",
-    "set_defaults",
-    "on",
-    "off",
-    "set_grid_option",
-    "show_grid",
-    "QgridWidget"
-]
+from qgridnext import *

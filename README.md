@@ -19,14 +19,14 @@ QgridNext is compatible with recent versions of Jupyter:
 
 | QgridNext |  JupyterLab  | Notebook |    Voila    |
 |:---------:|:------------:|:--------:|:-----------:|
-|  v2.0.0   |   v3 - v4    | v5 - v7  | v0.2 - v0.5 |
+|   v2.0    |   v3 - v4    | v5 - v7  | v0.2 - v0.5 |
 
 The test environments are provided in the [test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs) folder. You can try the widget in these environments easily.
 
 
-## QgridNext V2.0.0
+## QgridNext V2.0
 
-The first release v2.0.0 significantly improves compatibility and addresses bugs found in Qgrid v1.3.1.
+QgridNext v2.0 significantly improves compatibility and addresses bugs found in Qgrid v1.3.1.
 * Support JupyterLab 4;
 * Released as a prebuilt extension (now can be installed with one step);
 * UI improvements:
@@ -44,11 +44,10 @@ The first release v2.0.0 significantly improves compatibility and addresses bugs
   * Ensure `Defaults.grid_option` dict instance are not shared across widget instances;
   * Remove full-screen mode for voila compatibility;
   * Remove deprecated QGridWidget alias, only QgridWidget is allowed;
-  * Replace deprecated usages for traitlets, pandas and jquery.
+  * Replace deprecated usages for traitlets, pandas and jquery;
+  * Support `string[pyarrow]`-typed columns.
 
 ## Installation
-
-**Note: as a drop-in replacement for Qgrid, the import name remains qgrid, although the distribution is renamed to qgridnext. Please make sure you install qgridnext without having qgrid installed.**
 
 Installing with pip:
 
@@ -73,7 +72,7 @@ QgridNext supports Python 3.7+ and depends on the following packages:
 
 **Rendering your DataFrame:**
 ```py
-from qgrid import show_grid
+from qgridnext import show_grid
 show_grid(your_df)
 ```
 

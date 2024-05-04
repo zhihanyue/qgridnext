@@ -145,7 +145,7 @@ class NPM(Command):
 
 
 version_ns = {}
-with open(join(here, 'qgrid', '_version.py')) as f:
+with open(join(here, 'qgridnext', '_version.py')) as f:
     exec(f.read(), {}, version_ns)
 
 def read_requirements(basename):
