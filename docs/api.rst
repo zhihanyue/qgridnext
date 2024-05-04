@@ -1,5 +1,5 @@
 API Reference
 =================
 
-.. automodule:: qgrid
+.. automodule:: qgridnext
   :members:
