@@ -1,10 +1,16 @@
 Changelog
 =================
 
-QgridNext V2.0
+QgridNext V2.0.1
 ------------------
 
-The first release v2.0 significantly improves compatibility and addresses bugs found in Qgrid v1.3.1.
+- Support `string[pyarrow]`-typed columns;
+- Deprecate `import qgrid`; now `qgrid` is an alias of `qgridnext` and is not recommended.
+
+QgridNext V2.0.0
+------------------
+
+The first release v2.0.0 significantly improves compatibility and addresses bugs found in Qgrid v1.3.1.
 
 - Support JupyterLab 4;
 - Released as a prebuilt extension (now can be installed with one step);
@@ -28,6 +34,5 @@ The first release v2.0 significantly improves compatibility and addresses bugs f
   * Ensure `Defaults.grid_option` dict instance are not shared across widget instances;
   * Remove full-screen mode for voila compatibility;
   * Remove deprecated QGridWidget alias, only QgridWidget is allowed;
-  * Replace deprecated usages for traitlets, pandas, and jquery;
-  * Support `string[pyarrow]`-typed columns.
+  * Replace deprecated usages for traitlets, pandas, and jquery.
 
