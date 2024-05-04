@@ -958,6 +958,8 @@ class QgridWidget(widgets.DOMWidget):
 
             columns = {}
             for i, cur_column in enumerate(df_schema['fields']):
+                if 'extDtype' in cur_column and cur_column['extDtype'] == 'string[pyarrow]':
+                    cur_column['type'] = 'string'
                 col_name = cur_column['name']
                 if 'constraints' in cur_column and \
                         isinstance(cur_column['constraints']['enum'][0], dict):
@@ -1184,6 +1186,8 @@ class QgridWidget(widgets.DOMWidget):
                     unique_list = self._sorted_column_cache[col_name]
                 else:
                     unique = col_series.unique()
+                    if hasattr(unique, 'to_numpy'):
+                        unique = unique.to_numpy()
                     if len(unique) < 500000:
                         try:
                             unique.sort()
