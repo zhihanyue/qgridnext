@@ -270,7 +270,7 @@ class QgridView extends widgets.DOMWidgetView {
 
       Object.assign(slick_column, type_info);
 
-      if (cur_column.type == 'any'){
+      if (cur_column.type == 'any' && cur_column.constraints){
         slick_column.editorOptions = {
           options: cur_column.constraints.enum
         };
