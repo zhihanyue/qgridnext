@@ -958,7 +958,7 @@ class QgridWidget(widgets.DOMWidget):
 
             columns = {}
             for i, cur_column in enumerate(df_schema['fields']):
-                if 'extDtype' in cur_column and cur_column['extDtype'] == 'string[pyarrow]':
+                if 'extDtype' in cur_column and cur_column['extDtype'].startswith('string'):
                     cur_column['type'] = 'string'
                 col_name = cur_column['name']
                 if 'constraints' in cur_column and \
