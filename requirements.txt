@@ -1,4 +1,4 @@
 pandas>=0.20.0
 ipywidgets>=7.0.0
-numpy<2
+numpy
 traitlets<6
