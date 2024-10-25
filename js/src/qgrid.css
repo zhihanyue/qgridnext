@@ -729,7 +729,3 @@ input.bool-filter-radio {
 .q-grid .slick-sort-indicator-asc {
   background-image: none;
 }
-
-.jupyter-widgets {
-  overflow: auto !important;
-}
