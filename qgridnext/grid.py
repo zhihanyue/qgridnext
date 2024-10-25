@@ -1140,8 +1140,8 @@ class QgridWidget(widgets.DOMWidget):
             if 'filter_info' not in col_info or \
                     (col_info['filter_info']['min'] is None and
                      col_info['filter_info']['max'] is None):
-                col_info['slider_max'] = max(col_series)
-                col_info['slider_min'] = min(col_series)
+                col_info['slider_max'] = col_series.max()
+                col_info['slider_min'] = col_series.min()
                 self._columns[col_name] = col_info
             self.send({
                 'type': 'column_min_max_updated',
@@ -1153,8 +1153,8 @@ class QgridWidget(widgets.DOMWidget):
             if 'filter_info' not in col_info or \
                     (col_info['filter_info']['min'] is None and
                      col_info['filter_info']['max'] is None):
-                col_info['filter_max'] = max(col_series)
-                col_info['filter_min'] = min(col_series)
+                col_info['filter_max'] = col_series.max()
+                col_info['filter_min'] = col_series.min()
                 self._columns[col_name] = col_info
             self.send({
                 'type': 'column_min_max_updated',
