@@ -45,7 +45,8 @@ QgridNext v2.0 significantly improves compatibility and addresses bugs found in 
   * Remove full-screen mode for voila compatibility;
   * Remove deprecated QGridWidget alias, only QgridWidget is allowed;
   * Replace deprecated usages for traitlets, pandas and jquery;
-  * Support `string[pyarrow]`-typed columns.
+  * Support `string[python|pyarrow]`-typed columns.
+  * ...
 
 ## Installation
 

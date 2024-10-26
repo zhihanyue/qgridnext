@@ -1,6 +1,15 @@
 Changelog
 =================
 
+QgridNext V2.0.2
+------------------
+
+- Fix errors on string columns for pandas v2.2;
+- Fix the filters for numeric pyarrow columns with `NA`` values;
+- Ensure consistent scrollbar measurements across different environments;
+- Remove an unwanted css entry causing display issues with ipywidgets.
+
+
 QgridNext V2.0.1
 ------------------
 
