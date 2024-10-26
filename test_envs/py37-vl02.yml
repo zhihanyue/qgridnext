@@ -10,5 +10,3 @@ dependencies:
   - jinja2=3.0.3
   - pytest
   - pip
-  - pip:
-    - qgridnext==2.0.0

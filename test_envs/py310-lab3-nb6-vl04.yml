@@ -10,5 +10,4 @@ dependencies:
   - voila=0.4.3
   - pytest
   - pip
-  - pip:
-    - qgridnext==2.0.0
+

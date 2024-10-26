@@ -11,5 +11,3 @@ dependencies:
   - pytest
   - pyarrow
   - pip
-  - pip:
-    - qgridnext==2.0.0

@@ -7,6 +7,7 @@ git clone https://github.com/zhihanyue/qgridnext
 cd qgridnext
 conda env create -f test_envs/xxx.yml
 conda activate qgridnext-xxx
+pip install qgridnext
 pytest   # test basic functions
 
 # To test QgridNext's compatibility, run jupyter and check example.ipynb manually in your browser:
