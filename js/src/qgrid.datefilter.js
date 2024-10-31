@@ -66,6 +66,7 @@ class DateFilter extends filter_base.FilterBase {
       "dayNamesMin": ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
       "prevText": "",
       "nextText": "",
+      "showAnim": "",
       minDate: this.min_date,
       maxDate: this.max_date,
       beforeShow: (input, inst) => {
