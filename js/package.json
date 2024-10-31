@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhihanyue/qgridnext"
+    "url": "git+https://github.com/zhihanyue/qgridnext.git"
   },
   "keywords": [
     "jupyter",
