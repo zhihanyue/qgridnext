@@ -791,6 +791,10 @@ body.qgrid-dark-mode .q-grid .slick-header-columns {
   background-color: #474747 !important;
 }
 
+body.qgrid-dark-mode .q-grid .slick-viewport {
+  scrollbar-color: #9e9e9e #71717147;
+}
+
 /* Dark mode for filters */
 
 body.qgrid-dark-mode .q-grid-container .grid-filter {
