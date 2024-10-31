@@ -36,6 +36,7 @@ QgridNext v2.0 significantly improves compatibility and addresses bugs found in 
   * Fix poorly displayed left/right button of date picker;
   * Correct text color in dark mode;
   * Standardize HTML tags to fix poorly displayed filters;
+  * ...
 * Building bug fixes:
   * Fix inconsistent pkg name for embeddable qgrid bundle;
   * Fix data_files finding that results in incomplete extension setup;
@@ -45,8 +46,11 @@ QgridNext v2.0 significantly improves compatibility and addresses bugs found in 
   * Remove full-screen mode for voila compatibility;
   * Remove deprecated QGridWidget alias, only QgridWidget is allowed;
   * Replace deprecated usages for traitlets, pandas and jquery;
-  * Support `string[python|pyarrow]`-typed columns.
+  * Support `string[python|pyarrow]`-typed columns;
   * ...
+* Dark theme support for JupyterLab, Notebook, and VSCode-Jupyter.
+  ![dark_theme](https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/dark_theme.png)
+
 
 ## Installation
 
