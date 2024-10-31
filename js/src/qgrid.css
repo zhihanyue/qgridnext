@@ -947,3 +947,12 @@ body.qgrid-dark-mode .ui-datepicker .ui-datepicker-other-month .ui-state-default
   background-color: #1f1f1f;
   color: #666666;
 }
+
+/* Dark mode for vscode */
+:root {
+  --jp-widgets-color: var(--vscode-editor-foreground);
+  --jp-widgets-font-size: var(--vscode-editor-font-size);
+}
+body.qgrid-dark-mode .cell-output-ipywidget-background {
+  background-color: transparent !important;
+}

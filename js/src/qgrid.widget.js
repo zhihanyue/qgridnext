@@ -71,13 +71,16 @@ class QgridView extends widgets.DOMWidgetView {
     });
     observer.observe(document.body, {
       attributes: true,
-      attributeFilter: ["data-jp-theme-name"]
+      attributeFilter: ["data-jp-theme-name", "data-vscode-theme-kind"]
     });
     this.update_theme();
   }
 
   update_theme() {
-    const isDarkTheme = document.body.getAttribute("data-jp-theme-name") === "JupyterLab Dark";
+    const isDarkTheme = document.body.getAttribute("data-jp-theme-name") === "JupyterLab Dark" ||
+                          document.body.getAttribute("data-vscode-theme-kind") === "vscode-dark" ||
+                          document.body.classList.contains("vscode-dark");
+    
     if (isDarkTheme) {
         document.body.classList.add("qgrid-dark-mode");
     } else {
