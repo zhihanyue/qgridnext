@@ -151,7 +151,11 @@ class FilterBase {
   }
 
   initialize_controls() {
-    this.filter_elem.find("a.reset-link").on('click', (e) => this.reset_filter());
+    this.filter_elem.find("a.reset-link").on("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.reset_filter();
+    });
     this.filter_elem.find("i.close-button").on('click', (e) => this.hide_filter());
     $(document.body).on("mousedown", (e) => this.handle_body_mouse_down(e));
     $(document.body).on("keyup", (e) => this.handle_body_key_up(e));
