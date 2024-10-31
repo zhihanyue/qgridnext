@@ -725,3 +725,225 @@ input.bool-filter-radio {
 .q-grid .slick-sort-indicator-asc {
   background-image: none;
 }
+
+
+
+
+/* ========= Dark Mode CSS ========== */
+
+body.qgrid-dark-mode .q-grid-container,
+body.qgrid-dark-mode .slick-row.even {
+  background-color: #111111;
+  color: #e4e4e4;
+}
+body.qgrid-dark-mode .slick-row.odd {
+  background-color: #212121;
+  color: #e4e4e4;
+}
+body.qgrid-dark-mode .slick-row .editor-text {
+  color: #e4e4e4;
+}
+body.qgrid-dark-mode .q-grid.highlight-selected-row .slick-cell.selected {
+  background-color: #1c2f3e;
+}
+body.qgrid-dark-mode .q-grid .fa-check {
+  color: #9ac9f5;
+}
+body.qgrid-dark-mode .q-grid {
+  border-color: #474747;
+}
+body.qgrid-dark-mode .q-grid .slick-cell {
+  border-bottom-color: rgb(17, 17, 17);
+}
+body.qgrid-dark-mode .q-grid .slick-header-column {
+  background-color: #111111;
+  color: #ededed;
+}
+body.qgrid-dark-mode .q-grid .slick-resizable-handle {
+  background-color: #474747;
+  border-color: #111111;
+}
+body.qgrid-dark-mode .slick-header.ui-state-default {
+  border-color: #474747;
+}
+body.qgrid-dark-mode .q-grid .filter-button:hover,
+body.qgrid-dark-mode .q-grid .slick-header-column.active .filter-button {
+  background-color: #474747 !important;
+  border: none;
+}
+body.qgrid-dark-mode .q-grid .slick-header-column .filter-button.filter-active,
+body.qgrid-dark-mode .q-grid .slick-header-column .filter-button.filter-active:hover{
+  background-color: #474747 !important;
+  border-left: none;
+}
+
+body.qgrid-dark-mode .q-grid.force-fit-columns .slick-header-column:last-child .filter-button {
+  border-right-color: #111111 !important;
+}
+
+body.qgrid-dark-mode .q-grid.force-fit-columns .slick-header-column:last-child .filter-button.filter-active,
+body.qgrid-dark-mode .q-grid.force-fit-columns .slick-header-column:last-child .filter-button:hover,
+body.qgrid-dark-mode .q-grid.force-fit-columns .slick-header-column.active:last-child .filter-button {
+  border-right-color: #474747 !important;
+}
+
+body.qgrid-dark-mode .q-grid .slick-header-columns {
+  background-color: #474747 !important;
+}
+
+/* Dark mode for filters */
+
+body.qgrid-dark-mode .q-grid-container .grid-filter {
+  background-color: #111111;
+  border-color: #ffffff26;
+  box-shadow: 0 6px 12px #20202026;
+}
+body.qgrid-dark-mode .q-grid-container .grid-filter h3.qgrid-popover-title {
+  background-color: #252525;
+  border-bottom: none;
+}
+body.qgrid-dark-mode .q-grid-container .grid-filter .dropdown-footer {
+  background-color: #111111;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+body.qgrid-dark-mode .q-grid-container a {
+  color: #d4ebff !important;
+}
+
+/* Dark mode for text filter */
+body.qgrid-dark-mode .text-filter .slick-cell {
+  background-color: rgb(17, 17, 17) !important;
+  border-bottom-color: #222222 !important;
+}
+body.qgrid-dark-mode .text-filter .slick-row.odd .slick-cell {
+  background-color: rgb(33, 33, 33) !important;
+}
+body.qgrid-dark-mode .text-filter .text-filter-grid {
+  border-top-color: #333333;
+}
+
+/* Dark mode for <input> */
+body.qgrid-dark-mode .q-grid-container input {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #555555;
+  border-radius: 3px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.qgrid-dark-mode .q-grid-container input::placeholder {
+  color: #aaaaaa;
+}
+
+body.qgrid-dark-mode .q-grid-container input:focus {
+  background-color: #3a3a3a;
+  border-color: #888888;
+  outline: none;
+}
+
+/* Dark mode for sliders */
+body.qgrid-dark-mode .q-grid-container .numerical-filter .range-separator {
+  color: #cccccc;
+}
+
+body.qgrid-dark-mode .q-grid-container .slider-range {
+  border-color: #555555;
+}
+
+body.qgrid-dark-mode .q-grid-container .ui-slider {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+body.qgrid-dark-mode .q-grid-container .numerical-filter .ui-slider-handle {
+  background-color: #cccccc;
+  border-color: #777777;
+}
+
+body.qgrid-dark-mode .q-grid-container .numerical-filter .ui-slider-handle:hover,
+body.qgrid-dark-mode .q-grid-container .numerical-filter .ui-slider-handle:active {
+  background-color: #777777;
+  border-color: #999999;
+}
+
+body.qgrid-dark-mode .q-grid-container .numerical-filter .ui-slider-range {
+  background-color: #8b8b8b;
+  border-radius: 5px;
+}
+
+
+
+/* Dark mode styles for jQuery UI DatePicker */
+body.qgrid-dark-mode .ui-datepicker {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  border: 1px solid #404040;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+body.qgrid-dark-mode #ui-datepicker-div.ui-datepicker {
+  background-color: #404040;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-datepicker-header {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+  color: #ffffff;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-datepicker-title {
+  color: #ffffff;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-widget-header .ui-datepicker-prev,
+body.qgrid-dark-mode .ui-datepicker .ui-widget-header .ui-datepicker-next {
+  background-color: #2d2d2d;
+  color: #dddddd;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-widget-header .ui-datepicker-prev-hover,
+body.qgrid-dark-mode .ui-datepicker .ui-widget-header .ui-datepicker-next-hover {
+  color: #dddddd;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-datepicker-prev:hover,
+body.qgrid-dark-mode .ui-datepicker .ui-datepicker-next:hover {
+  background-color: #404040;
+  border-color: #505050;
+}
+body.qgrid-dark-mode .ui-datepicker th {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: none;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-state-default {
+  background-color: #333333;
+  color: #e0e0e0;
+  border: 1px solid #404040;
+  text-align: center;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-state-default:hover {
+  background-color: #404040;
+  color: #ffffff;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-state-active {
+  background-color: #0066cc;
+  color: #ffffff;
+  border-color: #0077ee;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-state-highlight {
+  background-color: #404040;
+  color: #ffffff;
+  border-color: #505050;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-state-disabled {
+  opacity: 0.35;
+  background-color: #282828;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-state-disabled .ui-state-default {
+  background-color: transparent;
+  color: #808080;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-datepicker-week-end {
+  background-color: #262626;
+}
+body.qgrid-dark-mode .ui-datepicker .ui-datepicker-other-month .ui-state-default {
+  background-color: #1f1f1f;
+  color: #666666;
+}

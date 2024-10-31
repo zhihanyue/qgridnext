@@ -58,6 +58,31 @@ class QgridView extends widgets.DOMWidgetView {
     }
     this.initialize_toolbar();
     this.initialize_slick_grid();
+    this.initialize_theme();
+  }
+
+  initialize_theme() {
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+          if (mutation.type === "attributes" && mutation.attributeName === "data-jp-theme-name") {
+            this.update_theme();
+          }
+      }
+    });
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["data-jp-theme-name"]
+    });
+    this.update_theme();
+  }
+
+  update_theme() {
+    const isDarkTheme = document.body.getAttribute("data-jp-theme-name") === "JupyterLab Dark";
+    if (isDarkTheme) {
+        document.body.classList.add("qgrid-dark-mode");
+    } else {
+        document.body.classList.remove("qgrid-dark-mode");
+    }
   }
 
   initialize_toolbar() {
