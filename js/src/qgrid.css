@@ -287,7 +287,6 @@
   border-right: none;
   border-left: 1px solid transparent;
   font-size: 13px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding-left: 0px;
   padding-top: 4px;
   border-top: none;
@@ -614,13 +613,12 @@
   border: 1px solid lightgrey;
   font-size: 13px;
   line-height: 18px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* jquery-ui overrides */
 
 .ui-widget, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: inherit !important;
   font-size: 13px;
 }
 
@@ -635,9 +633,8 @@
 }
 
 #ui-datepicker-div.ui-datepicker {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   /*@include box-shadow(0 5px 10px rgba(0, 0, 0, 0.2))*/
-  z-index: 99 !important;
+  z-index: 9999 !important;
   padding: 0 !important;
   background-color: white;
   border: 1px solid gray;
