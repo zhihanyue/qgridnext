@@ -64,7 +64,7 @@ class QgridView extends widgets.DOMWidgetView {
   initialize_theme() {
     const observer = new MutationObserver((mutations) => {
       for (const mutation of mutations) {
-          if (mutation.type === "attributes" && mutation.attributeName === "data-jp-theme-name") {
+          if (mutation.type === "attributes" && (mutation.attributeName === "data-jp-theme-name" || mutation.attributeName === "data-vscode-theme-kind")) {
             this.update_theme();
           }
       }
@@ -78,6 +78,7 @@ class QgridView extends widgets.DOMWidgetView {
 
   update_theme() {
     const isDarkTheme = document.body.getAttribute("data-jp-theme-name") === "JupyterLab Dark" ||
+                          document.body.getAttribute("data-jp-theme-name") === "JupyterLab Dark High Contrast" ||
                           document.body.getAttribute("data-vscode-theme-kind") === "vscode-dark" ||
                           document.body.classList.contains("vscode-dark");
     
