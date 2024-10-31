@@ -48,8 +48,9 @@ QgridNext v2.0 significantly improves compatibility and addresses bugs found in 
   * Replace deprecated usages for traitlets, pandas and jquery;
   * Support `string[python|pyarrow]`-typed columns;
   * ...
-* Dark theme support for JupyterLab, Notebook, and VSCode-Jupyter.
-  ![dark_theme](https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/dark_theme.jpg)
+* (V2.0.3) Add dark theme support for JupyterLab, Notebook, and VSCode-Jupyter, automatically adapting to the environment's theme.
+  <p><img width="650px" src="https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/dark_theme.jpg"></p>
+
 
 
 ## Installation
