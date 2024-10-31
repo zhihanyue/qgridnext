@@ -1,11 +1,24 @@
 Changelog
 =================
 
+QgridNext V2.0.3
+------------------
+
+- Add dark theme support for JupyterLab, Notebook, and VSCode-Jupyter, automatically adapting to the environment's theme;
+- Use Jupyter's default font for improved readability;
+- Minor UI fixes:
+
+  * Fix the unexpected scrolling to the top when clicking the reset button in VSCode;
+  * Disable animations for date pickers;
+  * Correct width of boolean filters;
+  * Adjust z-index of date pickers.
+
+
 QgridNext V2.0.2
 ------------------
 
 - Fix errors on string columns for pandas v2.2;
-- Fix the filters for numeric pyarrow columns with `NA`` values;
+- Fix the filters for numeric pyarrow columns with `NA` values;
 - Ensure consistent scrollbar measurements across different environments;
 - Remove an unwanted css entry causing display issues with ipywidgets.
 
