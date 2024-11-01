@@ -800,6 +800,25 @@ body.qgrid-dark-mode .grid-canvas .slick-row:last-child {
 }
 
 
+/* Dark mode for MultiIndex */
+body.qgrid-dark-mode .q-grid .idx-col.group-top,
+body.qgrid-dark-mode .q-grid .idx-col.group-middle,
+body.qgrid-dark-mode .q-grid .idx-col.group-bottom {
+  background-color: #111111;
+}
+body.qgrid-dark-mode .q-grid .idx-col.group-bottom {
+  border-bottom: 1px solid #474747;
+}
+body.qgrid-dark-mode .q-grid .slick-cell.idx-col.last-idx-col {
+  border-right-color: #474747;
+}
+body.qgrid-dark-mode .q-grid .slick-cell.idx-col.last-idx-col.group-single {
+  border-right: none;
+}
+body.qgrid-dark-mode .q-grid .slick-cell.idx-col:not(.first-idx-col) {
+  border-left-color: #474747;
+}
+
 
 
 /* Dark mode for filters */
