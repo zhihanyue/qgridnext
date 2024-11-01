@@ -35,12 +35,12 @@
   "dependencies": {
     "@juggle/resize-observer": "^3.4.0",
     "@jupyter-widgets/base": "^6",
-    "@jupyter-widgets/controls": "^3",
     "jquery": "^3.7.1",
     "jquery-ui-dist": "^1.13.2",
     "moment": "^2.30.1",
     "slickgrid-qgridnext": "^0.0.8",
-    "underscore": "^1.13.6"
+    "underscore": "^1.13.6",
+    "@juggle/resize-observer": "^3.4.0"
   },
   "jshintConfig": {
     "esversion": 6
@@ -50,6 +50,9 @@
     "src/"
   ],
   "jupyterlab": {
-    "extension": "src/jupyterlab-plugin"
+    "extension": "src/jupyterlab-plugin",
+    "sharedPackages": {
+      "@jupyter-widgets/base": { "bundled": false, "singleton": true }
+    }
   }
 }
