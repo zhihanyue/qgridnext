@@ -1,3 +1,4 @@
+const pkg = require('../package.json');
 var widgets = require('@jupyter-widgets/base');
 var _ = require('underscore');
 var moment = require('moment');
@@ -28,10 +29,10 @@ class QgridModel extends widgets.DOMWidgetModel {
     return _.extend(widgets.DOMWidgetModel.prototype.defaults(), {
       _model_name : 'QgridModel',
       _view_name : 'QgridView',
-      _model_module : 'qgrid',
-      _view_module : 'qgrid',
-      _model_module_version : '^2.0.3',
-      _view_module_version : '^2.0.3',
+      _model_module : 'qgridnext',
+      _view_module : 'qgridnext',
+      _model_module_version : pkg.version,
+      _view_module_version : pkg.version,
       _df_json: '',
       _columns: {}
     });

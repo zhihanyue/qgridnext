@@ -7,7 +7,7 @@ if (window.require) {
     window.require.config({
         map: {
             "*" : {
-                "qgrid": "nbextensions/qgridnext/index"
+                "qgridnext": "nbextensions/qgridnext/index"
             }
         }
     });

@@ -1,4 +1,4 @@
-var qgrid = require('./index');
+var qgridnext = require('./index');
 
 var base = require('@jupyter-widgets/base');
 
@@ -6,13 +6,13 @@ var base = require('@jupyter-widgets/base');
  * The widget manager provider.
  */
 module.exports = {
-  id: 'qgrid',
+  id: 'qgridnext',
   requires: [base.IJupyterWidgetRegistry],
   activate: function(app, widgets) {
       widgets.registerWidget({
-          name: 'qgrid',
-          version: qgrid.version,
-          exports: qgrid
+          name: 'qgridnext',
+          version: qgridnext.version,
+          exports: qgridnext
       });
     },
   autoStart: true

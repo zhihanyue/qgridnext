@@ -64,7 +64,7 @@ module.exports = [
         plugins: plugins,
         mode: 'production'
     },
-    {// Embeddable qgrid bundle
+    {// Embeddable qgridnext bundle
      //
      // This bundle is generally almost identical to the notebook bundle
      // containing the custom widget views and models.

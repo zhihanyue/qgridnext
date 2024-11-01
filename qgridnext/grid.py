@@ -1,3 +1,5 @@
+from ._version import __js_version__  # noqa F401
+
 import ipywidgets as widgets
 import pandas as pd
 import numpy as np
@@ -552,10 +554,10 @@ class QgridWidget(widgets.DOMWidget):
 
     _view_name = Unicode('QgridView').tag(sync=True)
     _model_name = Unicode('QgridModel').tag(sync=True)
-    _view_module = Unicode('qgrid').tag(sync=True)
-    _model_module = Unicode('qgrid').tag(sync=True)
-    _view_module_version = Unicode('^2.0.3').tag(sync=True)
-    _model_module_version = Unicode('^2.0.3').tag(sync=True)
+    _view_module = Unicode('qgridnext').tag(sync=True)
+    _model_module = Unicode('qgridnext').tag(sync=True)
+    _view_module_version = Unicode(__js_version__).tag(sync=True)
+    _model_module_version = Unicode(__js_version__).tag(sync=True)
 
     _df = Instance(pd.DataFrame)
     _df_json = Unicode('').tag(sync=True)

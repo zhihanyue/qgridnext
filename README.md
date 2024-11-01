@@ -48,7 +48,7 @@ QgridNext v2.0 significantly improves compatibility and addresses bugs found in 
   * Replace deprecated usages for traitlets, pandas and jquery;
   * Support `string[python|pyarrow]`-typed columns;
   * ...
-* (V2.0.3) Add dark theme support for JupyterLab, Notebook, and VSCode-Jupyter, automatically adapting to the environment's theme.
+* (v2.0.3) Add dark theme support for JupyterLab, Notebook, and VSCode-Jupyter, automatically adapting to the environment's theme.
   <p><img width="650px" src="https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/dark_theme.jpg"></p>
 
 
@@ -87,7 +87,7 @@ QGrid loads DataFrame lazily, which ensures efficiency for rendering large DataF
 ![render_time](https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/render_time.png)
 
 
-**Column-specific options:** Qgrid has the ability to set a number of options on a per column basis. This allows you to do things like explicitly specify which column should be sortable, editable, etc. For example, if you wanted to prevent editing on all columns except for a column named 'A', you could do the following:
+**Column-specific options:** Qgrid has the ability to set a number of options on a per column basis. This allows you to do things like explicitly specify which column should be sortable, editable, etc. For example, to prevent editing on all columns except for a column named 'A', you can do the following:
 
 ```py
 col_opts = { 'editable': False }
@@ -149,6 +149,8 @@ jupyter labextension enable qgridnext  # enable it if it's disabled
 ```
 
 If you encounter an error message like `displaying widget: model not found` or `Loading widget...`, it may indicate a version incompatibility between your ipywidgets and JupyterLab. In most cases, upgrading the ipywidgets version will solve the problem. You can also refer to the environment configurations listed in [test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs).
+
+When upgrading, it's necessary to restart the kernel and refresh the webpage. In some cases, clearing your browser's cache may also be helpful.
 
 Utilizing the test environments ([test_envs](https://github.com/zhihanyue/qgridnext/tree/main/test_envs)) is recommended for efficiently diagnosing any issues within your current setup. If the widget works correctly within the test environment but not in your own, it's likely due to version incompatibilities, which can be resolved by adjusting the versions in your environment accordingly.
 
