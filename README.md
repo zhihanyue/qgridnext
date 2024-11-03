@@ -48,7 +48,7 @@ QgridNext v2.0 significantly improves compatibility and addresses bugs found in 
   * Replace deprecated usages for traitlets, pandas and jquery;
   * Support `string[python|pyarrow]`-typed columns;
   * ...
-* (v2.0.3) Add dark theme support for JupyterLab, Notebook, and VSCode-Jupyter, automatically adapting to the environment's theme.
+* (v2.0.3+) Add dark theme support for JupyterLab, Notebook, and VSCode-Jupyter, automatically adapting to the environment's theme.
   <p><img width="650px" src="https://raw.githubusercontent.com/zhihanyue/qgridnext/main/docs/_static/dark_theme.jpg"></p>
 
 
@@ -108,7 +108,7 @@ show_grid(df, row_edit_callback=can_edit_row)
 
 ### Event handlers
 
-Use `on` and `off` methods to attach/detach event handlers. They're available on both the `qgrid` module (see [qgrid.on](https://qgridnext.readthedocs.io/en/latest/api.html#qgrid.on)) and individual `QgridWidget` instances (see [qgrid.QgridWidget.on](https://qgridnext.readthedocs.io/en/latest/api.html#qgrid.QgridWidget.on)).
+Use `on` and `off` methods to attach/detach event handlers. They're available on both the `qgridnext` module (see [qgridnext.on](https://qgridnext.readthedocs.io/en/latest/api.html#qgridnext.on)) and individual `QgridWidget` instances (see [qgridnext.QgridWidget.on](https://qgridnext.readthedocs.io/en/latest/api.html#qgridnext.QgridWidget.on)).
 
 Example:
 ```py
@@ -119,14 +119,6 @@ def handle_json_updated(event, qgrid_widget):
 
 # qgrid_widget = show_grid(...)
 qgrid_widget.on('json_updated', handle_json_updated)
-```
-
-Alternatively, the traditional `observe` method is available but not recommended due to its less granular event control:
-```py
-def handle_df_change(change):
-    print(change['new'])
-
-qgrid_widget.observe(handle_df_change, names=['_df'])
 ```
 
 Event handlers enable interesting integrations with other widgets/visualizations, like using qgrid to filter a DataFrame also displayed by another visualization.

@@ -1,6 +1,6 @@
 {
   "name": "qgridnext",
-  "version": "2.0.4-alpha.4",
+  "version": "2.0.4",
   "description": "An Interactive Grid for Sorting and Filtering DataFrames in Jupyter",
   "author": "QgridNext",
   "main": "src/index.js",

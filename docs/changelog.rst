@@ -1,6 +1,21 @@
 Changelog
 =================
 
+QgridNext V2.0.4
+------------------
+
+- Compatibility enhancements:
+
+  * Resolve compatibility issues with voila 0.5.6-0.5.8;
+  * Fix `Unable to find widget ...` error in VSCode-Jupyter.
+
+- UI Improvements:
+
+  * Improve display of MultiIndex in dark theme;
+  * Add support for JupyterLab Dark High Contrast theme.
+
+
+
 QgridNext V2.0.3
 ------------------
 
